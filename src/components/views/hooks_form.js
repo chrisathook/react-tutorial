@@ -4,8 +4,8 @@ import * as FormReducer from '../store/reducers/form_reducer';
 import Context from '../utils/context';
 
 
-const HooksForm1 = () => {
-    const context = useContext(Context)
+const HooksForm = () => {
+    const context = useContext(Context);
 
     const [valueChange, setValueChange] = useState('');
     const [valueSubmit, setValueSubmit] = useState('');
@@ -57,6 +57,7 @@ const HooksForm1 = () => {
             <h3>React useState:</h3>
             <p>Change: {valueChange}</p>
             <p>Submit: {valueSubmit}</p>
+            <br />
 
             <h3>React useReducer:</h3>
             <p>Change: {state.user_textChange}</p>
@@ -69,7 +70,7 @@ const HooksForm1 = () => {
             <br />
         </div>
     )
-}
+};
 
 
-export default HooksForm1;
+export default HooksForm;
