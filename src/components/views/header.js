@@ -16,7 +16,9 @@ const Header = () => {
             <Link to='/hooksform' style={{padding: '5px'}}>
                 Hooks Form
             </Link>
-
+            <Link to='/lazyload' style={{padding: '5px'}}>
+                lazyload test
+            </Link>
         </div>
     )};
 

@@ -13,7 +13,8 @@ const HooksForm = () => {
     const [useEffectValue, setUseEffectValue] = useState(0);
 
     useEffect(() => {
-        setUseEffectValue(useEffectValue + 1)
+        console.log ('repaint local');
+        setUseEffectValue((u)=>{return u + 1})
     }, [valueSubmit]);
 
 
@@ -23,7 +24,8 @@ const HooksForm = () => {
 
     const [useLocalReducerEffectValue, setLocalReducerEffectValue] = useState(0);
     useEffect(() => {
-        setLocalReducerEffectValue(useLocalReducerEffectValue + 1)
+        console.log ('repaint reducer');
+        setLocalReducerEffectValue((u)=>{return u + 1})
     }, [state.user_textSubmit]);
     const handleuseStateChange = (event) => (
         setValueChange(event.target.value)
