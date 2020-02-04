@@ -1,4 +1,4 @@
-import React, { useContext, useState, useReducer } from 'react';
+import React, {useContext, useState, useReducer, useEffect} from 'react';
 import * as ACTIONS from '../store/actions/actions';
 import * as FormReducer from '../store/reducers/form_reducer';
 import Context from '../utils/context';
@@ -10,10 +10,21 @@ const HooksForm = () => {
     const [valueChange, setValueChange] = useState('');
     const [valueSubmit, setValueSubmit] = useState('');
 
+    const [useEffectValue, setUseEffectValue] = useState(0);
+
+    useEffect(() => {
+        setUseEffectValue(useEffectValue + 1)
+    }, [valueSubmit]);
+
+
+
     const [state, dispatch] = useReducer(FormReducer.FormReducer,
         FormReducer.initialState);
 
-
+    const [useLocalReducerEffectValue, setLocalReducerEffectValue] = useState(0);
+    useEffect(() => {
+        setLocalReducerEffectValue(useLocalReducerEffectValue + 1)
+    }, [state.user_textSubmit]);
     const handleuseStateChange = (event) => (
         setValueChange(event.target.value)
     );
@@ -49,7 +60,7 @@ const HooksForm = () => {
             <br />
             <form onSubmit={context.useContextSubmit}>
                 <label> React useContext: </label>
-                <input id="useContext" onChange={context.useContextChange} type="text" />
+                <input id="useContext" onChange={context.useContentChange} type="text" />
                 <button type="submit"> Submit </button>
             </form>
             <br />
@@ -57,17 +68,22 @@ const HooksForm = () => {
             <h3>React useState:</h3>
             <p>Change: {valueChange}</p>
             <p>Submit: {valueSubmit}</p>
+            <p>effect Value on submit: {useEffectValue}</p>
             <br />
 
             <h3>React useReducer:</h3>
             <p>Change: {state.user_textChange}</p>
             <p>Submit: {state.user_textSubmit}</p>
+            <p>effect Value on submit: {useLocalReducerEffectValue}</p>
             <br />
             <h3>React useContext:</h3>
             <p>Change: {context.useContextChangeState}</p>
             <p>Submit: {context.useContextSubmitState}</p>
             <br />
             <br />
+
+
+
         </div>
     )
 };

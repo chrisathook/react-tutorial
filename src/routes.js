@@ -24,11 +24,11 @@ const Routes = () => {
                 <br/>
                 <br/>
                 <div>
-                    <switch>
+                    <Switch>
                         <Route exact path='/' component={Home}/>
                         <Route path='/basics' component={BasicContainer}/>
                         <Route path='/hooksform' component={HooksForm} />
-                    </switch>
+                    </Switch>
                 </div>
             </Router>
 
