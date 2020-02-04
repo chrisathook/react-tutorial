@@ -46,9 +46,9 @@ const HooksContainer = () => {
     return (
         <div>
             <div>
-                <button onClick={() => handleuseEffectValue()}> Handle Value  </button>
-                <button onClick={() => handleDispatchTrue()}>Dispatch True </button>
-                <button onClick={() => handleDispatchFalse()}>Dispatch False </button>
+                <button onClick={() => handleuseEffectValue()}> Handle Local Effect Value  </button>
+                <button onClick={() => handleDispatchTrue()}>Dispatch Local True </button>
+                <button onClick={() => handleDispatchFalse()}>Dispatch Local False </button>
                 <button onClick={() => context.dispatchContextTrue()}>Dispatch Context True </button>
                 <button onClick={() => context.dispatchContextFalse()}>Dispatch Context False </button>
                 <button onClick={() => incrementValue()}> Add Local Value </button>
